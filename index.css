@@ -5,167 +5,141 @@
 }
 
 body {
+    font-family: 'Cinzel', serif;
+    background-color: #f4f4f4;
     padding-top: 80px;
-    font-family: Arial, sans-serif;
 }
 
 /* HEADER */
-.header {
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: green;
+    padding: 15px 20px;
     position: fixed;
-    right: 0;
-    left: 0;
+    width: 100%;
     top: 0;
-    padding: 10px 20px;
+    left: 0;
     z-index: 1000;
 }
 
-.right-h {
+.logo-container {
     display: flex;
     align-items: center;
 }
 
 .logo {
-    height: 80px;
+    height: 60px;
     border-radius: 50px;
 }
 
-.name {
-    font-size: 22px;
+.site-name {
+    font-size: 18px;
     color: #FFD700;
-    margin-left: 15px;
+    margin-left: 10px;
 }
 
-/* Navigation */
-.left-h {
+.nav-links {
     display: flex;
-    gap: 15px;
+    gap: 20px;
 }
 
-.left-h a {
+.nav-links a {
     color: white;
     text-decoration: none;
     font-size: 16px;
-    transition: 0.3s;
+    transition: transform 0.3s;
 }
 
-.left-h a:hover {
+.nav-links a:hover {
     text-decoration: underline;
     transform: scale(1.1);
 }
 
 /* HAMBURGER MENU */
-.hamburger {
+.menu-toggle {
     display: none;
-    flex-direction: column;
+    font-size: 30px;
+    color: white;
     cursor: pointer;
 }
 
-.hamburger div {
-    width: 30px;
-    height: 4px;
-    background: white;
-    margin: 5px;
-    transition: 0.4s;
+/* WELCOME SECTION */
+.welcome {
+    text-align: center;
+    position: relative;
 }
 
-/* Mobile Menu */
-.mobile-menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 80px;
-    left: 0;
+.bible {
     width: 100%;
-    background: green;
-    text-align: center;
-    padding: 10px 0;
-    z-index: 1000;
+    max-height: 400px;
+    object-fit: cover;
 }
 
-.mobile-menu a {
-    display: block;
+.welcome-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: white;
-    padding: 15px;
-    text-decoration: none;
-    font-size: 18px;
-    transition: 0.3s;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
 }
 
-.mobile-menu a:hover {
-    background: #FFD700;
-    color: black;
-}
-
-/* Show mobile menu */
-.mobile-menu.active {
-    display: flex;
-}
-
-/* HERO SECTION */
-.welcome-con {
-    text-align: center;
-    padding: 40px;
-}
-
-.text-overlay {
+.welcome-text h1 {
     font-size: 24px;
-    color: black;
-    font-weight: bold;
-    text-align: center;
 }
 
-/* CONTENT BOXES */
+.join-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #FFD700;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.join-btn:hover {
+    background-color: white;
+}
+
+/* CONTENT SECTION */
 .content {
     display: flex;
-    justify-content: space-around;
-    padding: 40px 20px;
+    justify-content: space-between;
+    padding: 30px;
+    gap: 20px;
 }
 
 .content-box {
-    width: 300px;
+    width: 30%;
     height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    animation: fadeInUp 1s ease-in-out forwards;
 }
 
-.sermons {
-    background-color: #FFD700;
-    animation-delay: 0.5s;
-}
-
-.events {
-    background-color: green;
-    animation-delay: 1s;
-}
-
-.devotions {
-    background-color: purple;
-    animation-delay: 1.5s;
-}
+.sermons { background-color: #FFD700; }
+.events { background-color: green; }
+.devotions { background-color: purple; }
 
 button {
     background-color: white;
     border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
+    padding: 10px 15px;
+    font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
     border-radius: 5px;
-    transition: 0.3s;
 }
 
 button:hover {
     background-color: rgba(255, 255, 255, 0.8);
-    transform: scale(1.05);
 }
 
 /* FOOTER */
@@ -174,16 +148,44 @@ footer {
     color: white;
     text-align: center;
     padding: 20px;
+    margin-top: 30px;
 }
 
-/* RESPONSIVE DESIGN */
+.social-links a {
+    color: #FFD700;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* MOBILE RESPONSIVE */
 @media screen and (max-width: 768px) {
-    .left-h {
-        display: none;
+    .menu-toggle {
+        display: block;
     }
 
-    .hamburger {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: green;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
         display: flex;
+    }
+
+    .nav-links a {
+        padding: 10px;
+        display: block;
+    }
+
+    .welcome-text {
+        width: 90%;
     }
 
     .content {
@@ -193,6 +195,5 @@ footer {
 
     .content-box {
         width: 90%;
-        margin-bottom: 15px;
     }
 }
