@@ -13,15 +13,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <div class="header">
         <div class="right-h">
-            <div><img class="logo" src="logo2.jpg"></div>
+            <div><img class="logo" src="logo2.jpg" alt="Logo"></div>
             <div>
                 <p class="name">SHEKINA MISSIONARIES EVANGELISTIC NETWORK (SMEN)</p>
             </div>
         </div>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div> <!-- Hamburger Menu -->
         <div class="left-h">
             <a href="#">Home</a>
             <a href="#">About Us</a>
@@ -46,7 +44,9 @@
     </div>
 
     <div class="con-2">
-        <div class="sermons"><button>Latest Sermons</button></div>
+        <div class="sermons">
+            <button>Latest Sermons</button>
+        </div>
         <div class="events"><button>Upcoming Events</button></div>
         <div class="devotions"><button>Daily Devotions</button></div>
     </div>
@@ -59,13 +59,5 @@
             <a href="#">Instagram</a>
         </div>
     </footer>
-
-    <script>
-        function toggleMenu() {
-            let menu = document.querySelector(".left-h");
-            menu.classList.toggle("active");
-        }
-    </script>
-
 </body>
 </html>
