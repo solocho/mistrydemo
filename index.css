@@ -164,19 +164,25 @@ footer {
     }
 
     .nav-links {
-        display: none;
-        flex-direction: column;
-        background-color: green;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
+         display: flex;  /* Keep flex but hide it using opacity */
+    flex-direction: column;
+    background-color: green;
+    position: absolute;
+    top: 60px; /* Adjust based on header height */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    opacity: 0; /* Start hidden */
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, height 0.3s ease;
     }
 
     .nav-links.active {
-        display: flex;
+           opacity: 1;
+    height: auto;
+    padding: 10px 0;
     }
 
     .nav-links a {
