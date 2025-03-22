@@ -1,75 +1,81 @@
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     padding-top: 80px;
-    
 }
 
-.header{
+/* Header */
+.header {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background-color:green;
+    background-color: green;
     position: fixed;
     right: 0;
     left: 0;
     top: 0;
+    padding: 10px;
 }
-.right-h{
+
+.right-h {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-
-.logo{
+.logo {
     height: 100px;
     border-radius: 50px;
 }
-.name{
+
+.name {
     width: 500px;
     margin-right: 100px;
     font-size: 30px;
-    margin-top: 0;
     font-family: cinzel;
     color: #FFD700;
-    margin-right:200px;
+    margin-right: 200px;
 }
-.left-h{
+
+/* Navigation */
+.left-h {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     color: white;
-    
 }
-a{
+
+a {
     transition: transform 0.5s;
 }
-.left-h a:hover{
+
+.left-h a:hover {
     cursor: pointer;
     text-decoration: underline;
     transform: scale(1.1);
-
-
 }
+
+/* Welcome Section */
 .welcome-con {
-    
     width: 100%;
-    
     margin: auto;
     text-align: center;
+    position: relative;
 }
 
 .bible {
-    
-        background: url('bible.webp') no-repeat center center/cover;
-        background-attachment: fixed;
-        padding: 100px 335px;
-        color: white;
-        text-align: center;
+    background: url('bible.webp') no-repeat center center/cover;
+    background-attachment: fixed;
+    padding: 100px 335px;
+    color: white;
+    text-align: center;
 }
+
+/* Text Overlay */
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -90,29 +96,32 @@ a{
     font-size: 30px;
     font-weight: bold;
     text-align: center;
-  
     padding: 20px;
     border-radius: 10px;
     width: 80%;
 }
-.text-overlay p{
-opacity: 0; /* Initially hidden */
-animation: fadeInUp 1s ease-in-out forwards;
+
+.text-overlay p {
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards;
 }
-.l-1{
+
+.l-1 {
     margin-bottom: 20px;
     font-family: satisfy;
     animation-delay: 0.5s;
-    
-}
-.l-3{
-    animation-delay: 1.5s;
 }
 
-.l-2{
+.l-2 {
     margin-bottom: 20px;
     animation-delay: 1s;
 }
+
+.l-3 {
+    animation-delay: 1.5s;
+}
+
+/* Animated Boxes */
 @keyframes slideIn {
     0% {
         transform: translateX(-100%);
@@ -140,10 +149,10 @@ animation: fadeInUp 1s ease-in-out forwards;
     align-items: center;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    opacity: 0; /* Initially hidden */
+    opacity: 0;
 }
 
-/* Apply animation to each box with a delay */
+/* Apply animation to each box */
 .sermons {
     background-color: #FFD700;
     animation: slideIn 1s ease-in-out forwards;
@@ -162,6 +171,7 @@ animation: fadeInUp 1s ease-in-out forwards;
     animation-delay: 1.5s;
 }
 
+/* Buttons */
 button {
     background-color: white;
     border: none;
@@ -177,6 +187,8 @@ button:hover {
     background-color: rgba(255, 255, 255, 0.8);
     transform: scale(1.05);
 }
+
+/* Footer */
 footer {
     background: black;
     color: white;
@@ -191,10 +203,31 @@ footer {
     text-decoration: none;
     font-weight: bold;
 }
-/* Mobile Responsiveness */
+
+/* -------------------- */
+/* ✅ Mobile Responsive */
+/* -------------------- */
+@media screen and (max-width: 1024px) {
+    .name {
+        font-size: 25px;
+        width: auto;
+        margin-right: 50px;
+    }
+
+    .con-2 {
+        padding: 40px 50px;
+    }
+
+    .sermons, .events, .devotions {
+        width: 300px;
+        height: 150px;
+    }
+}
+
 @media screen and (max-width: 768px) {
+    /* Adjust Header */
     .header {
-        grid-template-columns: 1fr; /* Stack logo and menu */
+        grid-template-columns: 1fr;
         text-align: center;
         padding: 10px;
     }
@@ -206,7 +239,7 @@ footer {
 
     .name {
         width: auto;
-        font-size: 24px;
+        font-size: 22px;
         margin: 0;
     }
 
@@ -220,6 +253,7 @@ footer {
         padding: 10px;
     }
 
+    /* Adjust Welcome Section */
     .welcome-con {
         padding: 20px;
     }
@@ -234,15 +268,16 @@ footer {
         padding: 10px;
     }
 
+    /* Stack Buttons */
     .con-2 {
-        flex-direction: column; /* Stack the boxes */
+        flex-direction: column;
         align-items: center;
         padding: 20px;
     }
 
     .sermons, .events, .devotions {
         width: 90%;
-        height: 150px;
+        height: 130px;
     }
 
     button {
@@ -260,4 +295,20 @@ footer {
     }
 }
 
+@media screen and (max-width: 480px) {
+    .name {
+        font-size: 18px;
+    }
 
+    .text-overlay {
+        font-size: 16px;
+    }
+
+    .sermons, .events, .devotions {
+        height: 100px;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+}
