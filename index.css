@@ -241,4 +241,32 @@ footer {
         transform: translateY(0);
     }
 }
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Apply the animation with different delays */
+.content-box {
+    opacity: 0;
+    animation: slideIn 1s ease-in-out forwards;
+}
+
+.sermons {
+    animation-delay: 0.5s;
+}
+
+.events {
+    animation-delay: 1s;
+}
+
+.devotions {
+    animation-delay: 1.5s;
+}
 
